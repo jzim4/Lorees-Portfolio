@@ -1,26 +1,15 @@
-import {data, pics} from "../../helpers/js/initFirebase.js";
+const contentful = require('contentful')
 
-var dataList = Object.entries(data)
+const client = contentful.createClient({
+  space: '321b739feokm',
+  environment: 'master', // defaults to 'master' if not set
+  accessToken: 'vjvHhmdNkUZVDfDDWDErJmqHBa4JEVRUtNb2Yekry5U'
+})
 
-console.log(dataList.length);
-console.log(dataList);
-console.log(document.getElementById("citiesContainer"));
+client.getContentTypes()
+.then((response) => {printData(response.items)})
+.catch(console.error)
 
-var myInitCode = function () {
-    for (var i=0; i<dataList.length; i++) {
-        document.getElementById("citiesContainer").innerHTML += "<div>" + dataList[i][1] + "</div>";
-        console.log(i);
-    }
-    console.log(pics.photo1);
-    document.getElementById("citiesContainer").innerHTML += "<img src=\"" + pics.photo1 + "\">";
-}
-
-if (document.readyState !== 'loading') {
-    console.log('document is already ready, just execute code here');
-    myInitCode();
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('document was not ready, place code here');
-        myInitCode();
-    });
+function printData(data) {
+  console.log(data);
 }
