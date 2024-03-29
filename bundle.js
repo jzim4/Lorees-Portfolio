@@ -2209,7 +2209,14 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],6:[function(require,module,exports){
+function doTheThings(data) {
+    console.log(data);
+}
+
+module.exports = doTheThings;
+},{}],7:[function(require,module,exports){
 const contentful = require('contentful')
+const addContent = require('./addContent.js')
 
 const client = contentful.createClient({
   space: '321b739feokm',
@@ -2218,10 +2225,6 @@ const client = contentful.createClient({
 })
 
 client.getContentTypes()
-.then((response) => {printData(response.items)})
+.then((response) => {addContent(response.items)})
 .catch(console.error)
-
-function printData(data) {
-  console.log(data);
-}
-},{"contentful":3}]},{},[6]);
+},{"./addContent.js":6,"contentful":3}]},{},[7]);

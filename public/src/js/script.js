@@ -1,4 +1,8 @@
+// TO DO:
+// I have response.items visible on local and remote repositories. Now I have to figure out how to get the data itself
+
 const contentful = require('contentful')
+const addContent = require('./addContent.js')
 
 const client = contentful.createClient({
   space: '321b739feokm',
@@ -7,9 +11,5 @@ const client = contentful.createClient({
 })
 
 client.getContentTypes()
-.then((response) => {printData(response.items)})
+.then((response) => {addContent(response.items)})
 .catch(console.error)
-
-function printData(data) {
-  console.log(data);
-}
