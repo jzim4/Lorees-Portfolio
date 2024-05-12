@@ -9,6 +9,10 @@ function script(art, aboutTheArtist, exhibitionStatement) {
     return string;
   }
 
+  var removeSpaces = function(stringBefore) {
+    return stringBefore.replace(/ /g, "");
+  }
+
   standAlone=[];
   exhibition2023=[];
 
@@ -38,16 +42,18 @@ function script(art, aboutTheArtist, exhibitionStatement) {
     for (i in standAlone) {
       imgUrl = standAlone[i].images[0].fields.file.url;
       title = standAlone[i].title;
+      id = removeSpaces(standAlone[i].title);
       prepareToBody = insertProperty(html, "imgUrl", imgUrl);
       prepareToBody1 = insertProperty(prepareToBody, "title", title);
-      htmlToDisplay += prepareToBody1;
+      prepareToBody2 = insertProperty(prepareToBody1, "id", id);
+      htmlToDisplay += prepareToBody2;
     }
     document.querySelector('#galleryArtContainer').innerHTML = htmlToDisplay;
   }
 
   var exhibition2023Statement = function() {
-    text = "<p>" + exhibitionStatement[0].statement + "</p>";
-    prepareToBody = insertProperty(text, "br", "<p/><p>");
+    text = "<p class=\"indent\">" + exhibitionStatement[0].statement + "</p>";
+    prepareToBody = insertProperty(text, "br", "<p/><p class=\"indent\">");
     return prepareToBody;
   }
 
@@ -59,17 +65,59 @@ function script(art, aboutTheArtist, exhibitionStatement) {
     for (i in exhibition2023) {
       imgUrl = exhibition2023[i].images[0].fields.file.url;
       title = exhibition2023[i].title;
+      id = removeSpaces(exhibition2023[i].title);
       prepareToBody = insertProperty(html, "imgUrl", imgUrl);
       prepareToBody1 = insertProperty(prepareToBody, "title", title);
-      htmlToDisplay += prepareToBody1;
+      prepareToBody2 = insertProperty(prepareToBody1, "id", id);
+      htmlToDisplay += prepareToBody2;
     }
     document.querySelector('#exhibition2023ArtContainer').innerHTML = htmlToDisplay;
+  }
+
+  var clickableArt = function() {
+    for (i in art) {
+      id = removeSpaces(art[i].title);
+      console.log(id);
+      document.getElementById(id)
+        .addEventListener("click",() => makeIdPage(id));
+    }
+  }
+
+
+  var setIdContent = function() {
+    var modal = document.getElementById('artIdPage')
+
+    modal.addEventListener('show.bs.modal', event => {
+      const id = event.relatedTarget.getAttribute('data-bs-chooseContent');
+
+      var artToDisplay;
+      for (i in art) {
+        if (removeSpaces(art[i].title)==id) {
+          artToDisplay = art[i];
+        }
+      }
+      modal.querySelector('.modal-title').textContent = artToDisplay.title;
+      
+      artistStatement = insertProperty(artToDisplay.artistStatement, "br", "</p><p class=\"indent\">");
+      artistStatement1 = insertProperty(artistStatement, "break", "<br>");
+
+      prepareToBody = "<div class=\"my-2 mx-auto\" id=\"idStatement\"><p class=\"indent\">" + artistStatement1 + "</p></div>";
+      prepareToBody +="<div class=\"row\" id=\"idPageArt\">";
+      for (j in artToDisplay.images) {
+        prepareToBody += "<img class=\"idImage px-2 py-2\" src=\"" + artToDisplay.images[j].fields.file.url + "\"></img>";
+      }
+      prepareToBody += "</div>";
+      
+      modal.querySelector(".modal-body").innerHTML = prepareToBody;
+      console.log(prepareToBody);
+    });
   }
 
   makeBio();
   sortArt();
   makeGallery();
   make2023Exhibition();
+  setIdContent();
 }
 
 module.exports = script;

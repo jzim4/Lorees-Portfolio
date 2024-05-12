@@ -19,20 +19,17 @@
 <body>
       <nav class="navbar navbar-expand-lg bg-body-tertiary px-sm-5">
         <div id="navbarContainer" class="px-3 px-sm-0 container">
-          <a class="navbar-brand fs-2" href="#">Loree Keushgerian</a>
+          <a class="navbar-brand fs-2" href="/Lorees-Portfolio/index.html">Loree Keushgerian</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item mx-6 my-1 mx-lg-2 ">
-                <a class="nav-link active px-2 fs-6" aria-current="page" href="#">Home</a>
+              <li class="nav-item mx-6 my-1 mx-lg-2">
+                <a class="nav-link px-2 fs-6" href="/Lorees-Portfolio/index.html#Gallery">Gallery</a>
               </li>
               <li class="nav-item mx-6 my-1 mx-lg-2">
-                <a class="nav-link px-2 fs-6" href="#scrollspyHeading1">Gallery</a>
-              </li>
-              <li class="nav-item mx-6 my-1 mx-lg-2">
-                <a class="nav-link px-2 fs-6" href="#scrollspyHeading2">Exhibition 2023</a>
+                <a class="nav-link px-2 fs-6" href="/Lorees-Portfolio/index.html#Exhibition2023">Exhibition 2023</a>
               </li>
             </ul>
           </div>
@@ -52,16 +49,16 @@
         </div>
         </div>
 
-        <a id="scrollspyHeading1"></a>
         
         <div class="artContainer my-5 py-3 container">
+          <a id="Gallery"></a>
           <h2 class="my-4 px-0">Gallery</h2>
 
           <div id="galleryArtContainer"></div>
 
         </div>
 
-        <a id="scrollspyHeading2"></a>
+        <a id="Exhibition2023"></a>
         
         <div class="artContainer my-5 py-3 container">
             <h2 class="my-4 px-0">Final Exhibition March 2023</h2>
@@ -70,6 +67,24 @@
          
           <div id="exhibition2023ArtContainer"></div>
 
+        </div>
+
+        <div class="modal fade" id="artIdPage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="artTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="artTitle"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
         </div>
 
 

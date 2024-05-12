@@ -103,7 +103,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     /* GALLERY */
 @media (max-width: 439px) {
     .cardImg {
-        width: 150px;
+        width: 148px;
         height: 150px;
     }
     .cardContainer {
@@ -112,7 +112,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 }
 @media (min-width: 440px) {
     .cardImg {
-        width: 200px;
+        width: 198px;
         height: 200px;
     }
     .cardContainer {
@@ -122,6 +122,10 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 .cardImg {
     background-position: center;
     background-size: cover;
+}
+.cardContainer:hover {
+    border: 1px #564474 solid;
+    cursor: pointer;
 }
 #galleryArtContainer, #exhibition2023ArtContainer {
     display: flex;
@@ -133,6 +137,30 @@ p {
 }
 .indent {
     text-indent: 30px;
+}
+a {
+    text-decoration: none;
+}
+
+/* ID PAGE */
+#idPageArt {
+    justify-content: space-around;
+}
+#idStatement {
+    max-width: 900px;
+    text-align: justify;
+}
+.idImage {
+    max-height: 400px;
+    max-width: 400px;
+    width: auto;
+    object-fit: cover;
+}
+@media(max-width: 892px) {
+    .idImage {
+        max-height: 300px;
+        max-width: 300px;
+    }
 }
 
 /* FOOTER */
