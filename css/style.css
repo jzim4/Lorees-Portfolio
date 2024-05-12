@@ -74,7 +74,6 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 #bioImg {
     width: 412px;
     height: 550px;
-    background-image: url(/shadows2.jpeg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;

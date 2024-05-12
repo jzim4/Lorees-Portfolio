@@ -24,6 +24,9 @@ function script(art, aboutTheArtist, exhibitionStatement) {
   }
 
   var makeBio = function() {
+    bioUrl = aboutTheArtist[0].portrait.fields.file.url;
+    document.querySelector('#bioImg').style.backgroundImage = "url(\"" + bioUrl + "\")";
+
     text = "<p>" + aboutTheArtist[0].bio + "</p>";
     prepareToBody = insertProperty(text, "br", "<p/><p>");
     document.querySelector('#bioText').innerHTML = prepareToBody;
