@@ -136,22 +136,28 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     border: 1px #564474 solid;
     cursor: pointer;
 }
-#galleryArtContainer, #exhibition2023ArtContainer {
+#galleryArtContainer, #exhibition2023ArtContainer, #exhibition2023Display {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
     /* EXHIBITION*/
-#exhibition2023Display {
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-}
 .exhibitionImage {
-    max-height: 200px;
+    max-height: 400px;
     width: auto;
+}
+@media (max-width: 855px) and (min-width: 647px) {
+    .exhibitionImage {
+        max-height: 300px;
+        width: auto;
+    }
+}
+@media (max-width: 646px) {
+    .exhibitionImage {
+        max-height: 200px;
+        width: auto;
+    }
 }
 
 

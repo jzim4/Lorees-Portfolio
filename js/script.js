@@ -59,11 +59,11 @@ function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
 
   var make2023Exhibition = function() {
 
-    exhibitionDisplayArt = "<div>";
+    exhibitionDisplayArt = "";
     for (i in exhibitionDisplay[0].images) {
       exhibitionDisplayArt += "<img class=\"exhibitionImage px-3 py-3\" src=\"" + exhibitionDisplay[0].images[i].fields.file.url + "\">";
     }
-    exhibitionDisplayArt += "</div>";
+    exhibitionDisplayArt += "";
     console.log(exhibitionDisplay);
     console.log(exhibitionDisplayArt);
 
