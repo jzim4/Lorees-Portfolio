@@ -62,7 +62,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     box-shadow: none;
 }
 .navbar-toggler-icon {
-    background-image: url("/navbarToggleIcon.png");
+    background-image: url("../navbarToggleIcon.png");
 }
 
 /* HOME PAGE */
@@ -118,6 +118,8 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 }
 p {
     margin-bottom: 5px;
+}
+.indent {
     text-indent: 30px;
 }
 
