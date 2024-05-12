@@ -10,6 +10,15 @@
 h2 {
     text-align: center;
 }
+p {
+    margin-bottom: 5px;
+}
+.indent {
+    text-indent: 30px;
+}
+a {
+    text-decoration: none;
+}
 
 /* HEADER */
 #navbarContainer {
@@ -132,15 +141,19 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
     flex-wrap: wrap;
     justify-content: center;
 }
-p {
-    margin-bottom: 5px;
+
+    /* EXHIBITION*/
+#exhibition2023Display {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
 }
-.indent {
-    text-indent: 30px;
+.exhibitionImage {
+    max-height: 200px;
+    width: auto;
 }
-a {
-    text-decoration: none;
-}
+
 
 /* ID PAGE */
 #idPageArt {

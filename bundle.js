@@ -15,6 +15,7 @@ const client = contentful.createClient({
 art=[];
 aboutTheArtist=[];
 exhibitionStatement=[];
+exhibitionDisplay=[];
 
 client.getEntries({
   limit: 1000
@@ -29,14 +30,17 @@ client.getEntries({
     else if (entry.sys.contentType.sys.id == "exhibitionStatement") {
       exhibitionStatement.push(entry.fields);
     }
+    else if (entry.sys.contentType.sys.id == "exhibitionDisplay") {
+      exhibitionDisplay.push(entry.fields);
+    }
   });
-  script(art, aboutTheArtist, exhibitionStatement);
+  script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay);
 });
 },{"./script.js":2,"contentful":6}],2:[function(require,module,exports){
 const contentful = require('contentful')
 const snippets = require('./snippets.js')
 
-function script(art, aboutTheArtist, exhibitionStatement) {
+function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
 
   var insertProperty = function (oldString, propName, propValue) {
     var propToReplace = "{{" + propName + "}}";
@@ -93,6 +97,17 @@ function script(art, aboutTheArtist, exhibitionStatement) {
   }
 
   var make2023Exhibition = function() {
+
+    exhibitionDisplayArt = "<div>";
+    for (i in exhibitionDisplay[0].images) {
+      exhibitionDisplayArt += "<img class=\"exhibitionImage px-3 py-3\" src=\"" + exhibitionDisplay[0].images[i].fields.file.url + "\">";
+    }
+    exhibitionDisplayArt += "</div>";
+    console.log(exhibitionDisplay);
+    console.log(exhibitionDisplayArt);
+
+    document.querySelector('#exhibition2023Display').innerHTML = exhibitionDisplayArt;
+
     document.querySelector('#exhibition2023Statement').innerHTML = exhibition2023Statement();
 
     html = snippets[0];
@@ -107,15 +122,6 @@ function script(art, aboutTheArtist, exhibitionStatement) {
       htmlToDisplay += prepareToBody2;
     }
     document.querySelector('#exhibition2023ArtContainer').innerHTML = htmlToDisplay;
-  }
-
-  var clickableArt = function() {
-    for (i in art) {
-      id = removeSpaces(art[i].title);
-      console.log(id);
-      document.getElementById(id)
-        .addEventListener("click",() => makeIdPage(id));
-    }
   }
 
 

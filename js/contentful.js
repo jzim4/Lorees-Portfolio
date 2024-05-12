@@ -14,6 +14,7 @@ const client = contentful.createClient({
 art=[];
 aboutTheArtist=[];
 exhibitionStatement=[];
+exhibitionDisplay=[];
 
 client.getEntries({
   limit: 1000
@@ -28,6 +29,9 @@ client.getEntries({
     else if (entry.sys.contentType.sys.id == "exhibitionStatement") {
       exhibitionStatement.push(entry.fields);
     }
+    else if (entry.sys.contentType.sys.id == "exhibitionDisplay") {
+      exhibitionDisplay.push(entry.fields);
+    }
   });
-  script(art, aboutTheArtist, exhibitionStatement);
+  script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay);
 });

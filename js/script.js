@@ -1,7 +1,7 @@
 const contentful = require('contentful')
 const snippets = require('./snippets.js')
 
-function script(art, aboutTheArtist, exhibitionStatement) {
+function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
 
   var insertProperty = function (oldString, propName, propValue) {
     var propToReplace = "{{" + propName + "}}";
@@ -58,6 +58,17 @@ function script(art, aboutTheArtist, exhibitionStatement) {
   }
 
   var make2023Exhibition = function() {
+
+    exhibitionDisplayArt = "<div>";
+    for (i in exhibitionDisplay[0].images) {
+      exhibitionDisplayArt += "<img class=\"exhibitionImage px-3 py-3\" src=\"" + exhibitionDisplay[0].images[i].fields.file.url + "\">";
+    }
+    exhibitionDisplayArt += "</div>";
+    console.log(exhibitionDisplay);
+    console.log(exhibitionDisplayArt);
+
+    document.querySelector('#exhibition2023Display').innerHTML = exhibitionDisplayArt;
+
     document.querySelector('#exhibition2023Statement').innerHTML = exhibition2023Statement();
 
     html = snippets[0];
@@ -72,15 +83,6 @@ function script(art, aboutTheArtist, exhibitionStatement) {
       htmlToDisplay += prepareToBody2;
     }
     document.querySelector('#exhibition2023ArtContainer').innerHTML = htmlToDisplay;
-  }
-
-  var clickableArt = function() {
-    for (i in art) {
-      id = removeSpaces(art[i].title);
-      console.log(id);
-      document.getElementById(id)
-        .addEventListener("click",() => makeIdPage(id));
-    }
   }
 
 
