@@ -101,15 +101,27 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 }
 
     /* GALLERY */
-
+@media (max-width: 439px) {
+    .cardImg {
+        width: 150px;
+        height: 150px;
+    }
+    .cardContainer {
+        width:150px;
+    }
+}
+@media (min-width: 440px) {
+    .cardImg {
+        width: 200px;
+        height: 200px;
+    }
+    .cardContainer {
+        width:200px;
+    }
+}
 .cardImg {
-    width: 200px;
-    height: 200px;
     background-position: center;
     background-size: cover;
-}
-.cardContainer {
-    width:200px;
 }
 #galleryArtContainer, #exhibition2023ArtContainer {
     display: flex;
