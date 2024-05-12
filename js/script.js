@@ -102,16 +102,22 @@ function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
       
       artistStatement = insertProperty(artToDisplay.artistStatement, "br", "</p><p class=\"indent\">");
       artistStatement1 = insertProperty(artistStatement, "break", "<br>");
+      modal.querySelector("#artistStatement").innerHTML =  "<div class=\"my-2 mx-auto\" id=\"idStatement\"><p class=\"indent\">" + artistStatement1 + "</p></div>";
 
-      prepareToBody = "<div class=\"my-2 mx-auto\" id=\"idStatement\"><p class=\"indent\">" + artistStatement1 + "</p></div>";
-      prepareToBody +="<div class=\"row\" id=\"idPageArt\">";
+      modal.querySelector("#idTitle").textContent = artToDisplay.title;
+      modal.querySelector("#year").textContent = "Year: " + artToDisplay.year;
+      modal.querySelector("#medium").textContent = "Medium: " + artToDisplay.medium;
+      if (artToDisplay.size) {
+        modal.querySelector("#size").textContent = "Size: " + artToDisplay.size;
+      }
+
+      prepareToBody ="<div class=\"row\" id=\"idPageArt\">";
       for (j in artToDisplay.images) {
         prepareToBody += "<img class=\"idImage px-2 py-2\" src=\"" + artToDisplay.images[j].fields.file.url + "\"></img>";
       }
       prepareToBody += "</div>";
       
-      modal.querySelector(".modal-body").innerHTML = prepareToBody;
-      console.log(prepareToBody);
+      modal.querySelector("#idImagesContainer").innerHTML = prepareToBody;
     });
   }
 

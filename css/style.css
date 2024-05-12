@@ -165,9 +165,18 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary {
 #idPageArt {
     justify-content: space-around;
 }
-#idStatement {
+#idWords {
+    margin: 0 auto;
     max-width: 900px;
     text-align: justify;
+}
+#idTitle {
+    width: fit-content;
+}
+#specs {
+    border: 2px solid  #564474;
+    border-radius: 8px;
+    width: fit-content;
 }
 .idImage {
     max-height: 400px;
