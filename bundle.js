@@ -140,8 +140,7 @@ function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
       modal.querySelector('.modal-title').textContent = artToDisplay.title;
       
       artistStatement = insertProperty(artToDisplay.artistStatement, "br", "</p><p class=\"indent\">");
-      artistStatement1 = insertProperty(artistStatement, "break", "<br>");
-      modal.querySelector("#artistStatement").innerHTML =  "<div class=\"my-2 mx-auto\" id=\"idStatement\"><p class=\"indent\">" + artistStatement1 + "</p></div>";
+      modal.querySelector("#artistStatement").innerHTML =  "<div class=\"my-2 mx-auto\" id=\"idStatement\"><p class=\"indent\">" + artistStatement + "</p></div>";
 
       modal.querySelector("#idTitle").textContent = artToDisplay.title;
       modal.querySelector("#year").textContent = "Year: " + artToDisplay.year;
