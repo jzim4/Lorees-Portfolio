@@ -1,0 +1,24 @@
+ <div class="row mb-2">
+<a id="filterButton" class="px-5 ms-auto me-3" data-bs-toggle="collapse" href="#filterTab" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Filter
+</a>
+<div class="collapse container mx-auto mt-2" id="filterTab">
+    <div class="py-2 px-2 row">
+    <div class="col filterSection">Year:</div>
+    <span id="yearButtonOptions">
+        <button class="filterOption mx-2 my-1 px-2 py-1">2023</button>
+        <button class="filterOption mx-2 my-1 px-2 py-1">2024</button>
+    </span>
+    </div>
+    <hr class="my-0">
+    <div class="py-2 px-2 row">
+    <div class="col filterSection">Medium:</div>
+    <span id="mediumButtonOptions">
+        <button class="filterOption mx-2 my-1 px-2 py-1">Photography</button>
+        <button class="filterOption mx-2 my-1 px-2 py-1">monoprint and montage on paper</button>
+        <button class="filterOption mx-2 my-1 px-2 py-1">Oil on canvas</button>
+        <button class="filterOption mx-2 my-1 px-2 py-1">Fourth super cool option</button>
+    </span>
+    </div>
+</div>
+</div>

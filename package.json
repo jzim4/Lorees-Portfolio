@@ -8,17 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crunchy-nutella/Lorees-Portfolio.git"
+    "url": "git+https://github.com/jzim4/Lorees-Portfolio.git"
   },
   "author": "Jonah Zimmer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/crunchy-nutella/Lorees-Portfolio/issues"
+    "url": "https://github.com/jzim4/Lorees-Portfolio/issues"
   },
-  "homepage": "https://github.com/crunchy-nutella/Lorees-Portfolio#readme",
+  "homepage": "https://github.com/jzim4/Lorees-Portfolio#readme",
   "dependencies": {
     "browserify": "^17.0.0",
     "contentful": "^10.8.6",
-    "contentify": "^0.1.6"
+    "contentify": "^0.1.6",
+    "uniq": "^1.0.1"
   }
 }

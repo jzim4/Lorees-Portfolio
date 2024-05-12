@@ -1,0 +1,133 @@
+* {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #564474;
+}
+.container{
+    max-width: 1000px;
+}
+h2 {
+    text-align: center;
+}
+
+/* HEADER */
+#navbarContainer {
+    padding: 0px;
+}
+.navbar-brand {
+    font-family: "Rubik", sans-serif;
+}
+div.container-fluid {
+    margin: 10px 0;
+}
+.navbar-expand-lg .navbar-collapse {
+    text-align: end;
+    flex-grow: unset;
+}
+ul.navbar-nav {
+    width: fit-content;
+}
+@media (max-width: 991px) {
+    ul.navbar-nav {
+        margin-left: auto;
+    }
+}
+a.nav-link {
+    border: white 1px solid;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+a.nav-link.active {
+    border-color: #FADADD;
+    color: #FADADD !important;
+}
+a.nav-link:hover, a.navbar-brand:hover {
+    color:  #FADADD !important;
+    border-color:  #FADADD;
+}
+a.nav-link, a.navbar-brand {
+    color: white !important;
+}
+nav.navbar.navbar-expand-lg.bg-body-tertiary {
+    background-color: #8366B3 !important;
+}
+.navbar-toggler {
+    border-color: white;
+    padding: 3px 8px;
+    box-shadow: none;
+}
+.navbar-toggler:active, .navbar-toggler:visited, .navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler-icon {
+    background-image: url("/navbarToggleIcon.png");
+}
+
+/* HOME PAGE */
+
+    /* BIO */
+#bioRow, .artContainer {
+    background-color: #FADADD;
+}
+#bioImg {
+    width: 412px;
+    height: 550px;
+    background-image: url(/shadows2.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto;
+}
+#bioImgContainer {
+    align-self: center;
+}
+@media (max-width: 991px) {
+    #bioImg {
+        width: 300px;
+        height: 400px
+    }
+    .viewArtButtonContainer {
+        width: 80%;
+    }
+}
+#bioTitle {
+    text-align: center;
+}
+#bioText{
+    text-align: justify;
+    max-width: 400px;
+    margin: 0 auto
+}
+
+    /* GALLERY */
+
+.cardImg {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+.cardContainer {
+    width:200px;
+}
+#galleryArtContainer, #exhibition2023ArtContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+p {
+    margin-bottom: 5px;
+    text-indent: 30px;
+}
+
+/* FOOTER */
+#contact {
+    text-align: center;
+}
+#credits {
+    font-size: 12px;
+    align-self: flex-end;
+    text-align: center
+}
