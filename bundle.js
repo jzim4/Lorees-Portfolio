@@ -16,10 +16,12 @@ art=[];
 aboutTheArtist=[];
 exhibitionStatement=[];
 exhibitionDisplay=[];
+updateDate = "";
 
 client.getEntries({
   limit: 1000
 }).then(function (entries) {
+  console.log(entries);
   entries.items.forEach(function (entry) {
     if (entry.sys.contentType.sys.id == "art") {
       art.push(entry.fields);
@@ -103,8 +105,6 @@ function script(art, aboutTheArtist, exhibitionStatement, exhibitionDisplay) {
       exhibitionDisplayArt += "<img class=\"exhibitionImage px-3 py-3\" src=\"" + exhibitionDisplay[0].images[i].fields.file.url + "\">";
     }
     exhibitionDisplayArt += "";
-    console.log(exhibitionDisplay);
-    console.log(exhibitionDisplayArt);
 
     document.querySelector('#exhibition2023Display').innerHTML = exhibitionDisplayArt;
 

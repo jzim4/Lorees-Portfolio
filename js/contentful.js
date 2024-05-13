@@ -15,10 +15,12 @@ art=[];
 aboutTheArtist=[];
 exhibitionStatement=[];
 exhibitionDisplay=[];
+updateDate = "";
 
 client.getEntries({
   limit: 1000
 }).then(function (entries) {
+  console.log(entries);
   entries.items.forEach(function (entry) {
     if (entry.sys.contentType.sys.id == "art") {
       art.push(entry.fields);
